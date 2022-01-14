@@ -2,7 +2,7 @@
 - hosts: localhost
   
   vars_files:
-    - meraki_vars.yml
+    - network_vars.yml
 
   tasks:
     - name: Agregar SSIDs
