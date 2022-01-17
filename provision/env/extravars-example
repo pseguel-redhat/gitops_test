@@ -3,3 +3,4 @@ meraki_key: MERAKI_TOKEN
 snow_username: admin
 snow_password: SNOW_PASSWORD
 snow_instance: devXXXXX
+github_pat: GITHUB_PAT_TOKEN

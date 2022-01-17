@@ -1,27 +1,49 @@
 organization: Default
-job_template_name:
-credential_type:
-  name: ServiceNow
-  description: Credentials type for ServiceNow
-  kind: cloud
-  inputs: 
-    fields:
-      - id: SNOW_USERNAME
-        type: string
-        label: Service Now Username
-      - id: SNOW_INSTANCE
-        type: string
-        label: Service Now Instance Name (devXXXXX)
-      - id: SNOW_PASSWORD
-        type: string
-        label: Service Now Password
-        secret: true
-    required:
-      - SNOW_USERNAME
-      - SNOW_INSTANCE
-      - SNOW_PASSWORD
-  injectors:
-    extra_vars:
-      snow_instance: "{{ '{{ SNOW_INSTANCE }}' }}"
-      snow_password: "{{ '{{ SNOW_PASSWORD }}' }}"
-      snow_username: "{{ '{{ SNOW_USERNAME }}' }}"
+project:
+  name: NetGitOps Project
+  git_url: https://github.com/pseguel-redhat/gitops_test
+  organization: "{{ organization }}"
+  job_templates:
+    - name: Config SSIDs
+      playbook: config_ssids.yml
+      credentials: Meraki Credentials
+      inventory: Workshop Inventory
+      webhook_service: github
+credential_types:
+  - name: ServiceNow
+    description: Credentials type for ServiceNow
+    kind: cloud
+    inputs: 
+      fields:
+        - id: SNOW_USERNAME
+          type: string
+          label: Service Now Username
+        - id: SNOW_INSTANCE
+          type: string
+          label: Service Now Instance Name (devXXXXX)
+        - id: SNOW_PASSWORD
+          type: string
+          label: Service Now Password
+          secret: true
+      required:
+        - SNOW_USERNAME
+        - SNOW_INSTANCE
+        - SNOW_PASSWORD
+    injectors:
+      extra_vars:
+        snow_instance: "{{ '{{ SNOW_INSTANCE }}' }}"
+        snow_password: "{{ '{{ SNOW_PASSWORD }}' }}"
+        snow_username: "{{ '{{ SNOW_USERNAME }}' }}"
+  - name: Meraki
+    description: Credentials for Meraki Dashboard API
+    kind: cloud
+    inputs:
+      fields:
+        - id: MERAKI_KEY
+          type: string
+          label: Meraki Dashboard API key 
+          secret: true
+    injectors:
+      extra_vars:
+        meraki_key: "{{ '{{ MERAKI_KEY }}' }}"
+          
