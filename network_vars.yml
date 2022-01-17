@@ -4,19 +4,19 @@ Net_Name: Meraki Wireless
 SSID:
   - name: MyCompany_employees
     number: 2
-    enabled: yes
+    enabled: no
     auth_mode: psk
     encryption_mode: wpa
     psk: Ansible123456!
   - name: MyCompany_contractors
     number: 3
-    enabled: yes
+    enabled: no
     auth_mode: psk
     encryption_mode: wpa
     psk: Ansible123456!
   - name: MyCompany_clustomers
     number: 4
-    enabled: yes
+    enabled: no
     auth_mode: psk
     encryption_mode: wpa
     psk: Ansible123456!
