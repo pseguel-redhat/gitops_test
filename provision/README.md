@@ -7,8 +7,8 @@ To run it, copy the file `extra_vars_example.yml` and
 change the values:
 - Ansible Controller URL
 - Ansible Controller credentials
-- Service Now environment (XXXX from https://
-- Service Now credentials (admin/xxxxxx) 
+- ServiceNow environment (XXXX from https://
+- ServiceNow credentials (admin/xxxxxx) 
 
 Steps are as follows:
 - Create a new Credential Type for Service Now
