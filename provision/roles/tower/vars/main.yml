@@ -1,0 +1,27 @@
+organization: Default
+job_template_name:
+credential_type:
+  name: ServiceNow
+  description: Credentials type for ServiceNow
+  kind: cloud
+  inputs: 
+    fields:
+      - id: SNOW_USERNAME
+        type: string
+        label: Service Now Username
+      - id: SNOW_INSTANCE
+        type: string
+        label: Service Now Instance Name (devXXXXX)
+      - id: SNOW_PASSWORD
+        type: string
+        label: Service Now Password
+        secret: true
+    required:
+      - SNOW_USERNAME
+      - SNOW_INSTANCE
+      - SNOW_PASSWORD
+  injectors:
+    extra_vars:
+      snow_instance: "{{ '{{ SNOW_INSTANCE }}' }}"
+      snow_password: "{{ '{{ SNOW_PASSWORD }}' }}"
+      snow_username: "{{ '{{ SNOW_USERNAME }}' }}"

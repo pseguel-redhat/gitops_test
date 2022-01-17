@@ -1,0 +1,9 @@
+---
+- name: Create ServiceNow Credential Type
+  awx.awx.credential_type:
+    name: "{{ credential_type.name }}"
+    description: "{{ credential_type.description }}"
+    kind: "{{ credential_type.kind }}"
+    inputs: "{{ credential_type.inputs }}"
+    injectors: "{{ credential_type.injectors }}"
+    state: present
