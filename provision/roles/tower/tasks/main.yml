@@ -7,3 +7,16 @@
     inputs: "{{ credential_type.inputs }}"
     injectors: "{{ credential_type.injectors }}"
     state: present
+
+ 
+- name: Add ServiceNow Credentials
+  awx.awx.tower_credential:
+    name: ServiceNow Credentials
+    description: "Credentials for ServiceNow environment"
+    credential_type: ServiceNow
+    organization: "{{ organization }}"
+    inputs:
+      SNOW_INSTANCE: "dev6666"
+      SNOW_PASSWORD: "PASSOWRD"
+      SNOW_USERNAME: "user"
+    
