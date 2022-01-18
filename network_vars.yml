@@ -14,7 +14,7 @@ SSID:
     auth_mode: psk
     encryption_mode: wpa
     psk: Ansible123456!
-  - name: MyCompany_clustomers
+  - name: MyCompany_customers
     number: 4
     enabled: yes
     auth_mode: psk
