@@ -5,7 +5,7 @@
     - network_vars.yml
 
   tasks:
-    - name: Agregar SSIDs
+    - name: Add SSIDs
       cisco.meraki.meraki_mr_ssid:
         auth_key: "{{ meraki_key }}"
         org_name: "{{ Org_Name }}"
